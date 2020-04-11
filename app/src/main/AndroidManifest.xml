@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="bhumi.arrapp.com">
+    <uses-permission android:name="android.permission.CAMERA"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.camera.ar" android:required="true"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher_logo"
+        android:label="@string/nolabel"
+
+        android:roundIcon="@drawable/ic_launcher_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.ar.core" android:value="optional" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".itemsDisplayActivity"></activity>
+        <activity android:name=".MainGridActivity" android:theme="@style/AppTheme"></activity>
+        <activity android:name=".MainArFragmentActivity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"
+                    android:theme ="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+        <!-- Path for Images -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="bhumi.arrapp.com.ar.codelab.name.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/paths"/>
+        </provider>
+
+    </application>
+
+</manifest>

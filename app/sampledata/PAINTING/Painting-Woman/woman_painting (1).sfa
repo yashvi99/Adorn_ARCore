@@ -1,0 +1,158 @@
+{
+  animations: [
+    {
+      clips: [
+        {
+          name: 'Take 001',
+          runtime_name: 'woman_painting (1)',
+        },
+      ],
+      path: 'sampledata/PAINTING/Painting-Woman/woman_painting (1).fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'blinn2',
+      parameters: [
+        {
+          baseColor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'lambert2',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'cleo',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+    {
+      name: 'blinn1',
+      parameters: [
+        {
+          baseColor: [
+            0.68620000000000003,
+            0.52139999999999997,
+            0.13450000000000001,
+            1,
+          ],
+        },
+        {
+          baseColorMap: null,
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/PAINTING/Painting-Woman/woman_painting (1).fbx',
+    name: 'woman_painting (1)',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/PAINTING/Painting-Woman\\woman_painting (1).fbm\\cleo.jpg',
+      name: 'cleo',
+      pipeline_name: 'woman_painting (1).fbm\\cleo.jpg',
+    },
+    {
+      file: 'sampledata/PAINTING/Painting-Woman\\woman_painting (1).fbm\\cleobump.jpg',
+      name: 'cleobump',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: 'woman_painting (1).fbm\\cleobump.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

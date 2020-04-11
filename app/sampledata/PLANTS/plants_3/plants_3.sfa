@@ -1,0 +1,128 @@
+{
+  materials: [
+    {
+      name: 'metall_vase',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.28671999999999997,
+            0.28671999999999997,
+            0.28671999999999997,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.147285,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'vagetable_vase',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.071679999999999994,
+            0.071679999999999994,
+            0.071679999999999994,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.147285,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Grass_grass_texture.j_grass_texture.jpg',
+      parameters: [
+        {
+          baseColor: 'grass_texture',
+        },
+        {
+          baseColorTint: [
+            0.18853400000000001,
+            0.35749700000000001,
+            0.12742600000000001,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.147285,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+    {
+      name: 'Grass.trunk',
+      parameters: [
+        {
+          baseColor: null,
+        },
+        {
+          baseColorTint: [
+            0.144565,
+            0.18271399999999999,
+            0.050195999999999998,
+            1,
+          ],
+        },
+        {
+          metallic: 1,
+        },
+        {
+          roughness: 0.147285,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/obj_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/PLANTS/plants_3/plants_3.obj',
+    name: 'plants_3',
+    recenter: 'root',
+    scale: 0.23766799999999999,
+  },
+  samplers: [
+    {
+      file: 'sampledata/PLANTS/plants_3\\grass_texture.jpg',
+      name: 'grass_texture',
+      pipeline_name: 'grass_texture.jpg',
+    },
+  ],
+  version: '0.54:2',
+}

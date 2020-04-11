@@ -1,0 +1,154 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+android {
+    compileSdkVersion 28
+//    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "bhumi.arrapp.com"
+        minSdkVersion 24
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.annotation:annotation:1.0.2'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.google.ar.sceneform.ux:sceneform-ux:1.12.0'
+    implementation 'com.google.ar.sceneform:core:1.12.0'
+    implementation "com.google.ar.sceneform:animation:1.12.0"
+    implementation 'com.google.ar:core:1.12.0'
+
+}
+
+
+
+
+
+
+
+sceneform.asset('sampledata/BED/bed_1/bed_1.obj',
+        'default',
+        'sampledata/BED/bed_1/bed_1.sfa',
+        'src/main/assets/bed_1')
+
+sceneform.asset('sampledata/BED/bed_2/bed_2.obj',
+        'default',
+        'sampledata/BED/bed_2/bed_2.sfa',
+        'src/main/assets/bed_2')
+
+
+
+
+
+
+
+
+
+sceneform.asset('sampledata/BED/bed_4/bed_4.obj',
+        'default',
+        'sampledata/BED/bed_4/bed_4.sfa',
+        'src/main/assets/bed_4')
+
+sceneform.asset('sampledata/CHAIR/stool/Stool.obj',
+        'default',
+        'sampledata/CHAIR/stool/Stool.sfa',
+        'src/main/assets/Stool')
+
+sceneform.asset('sampledata/CLOCK/Clock_1/Clock.obj',
+        'default',
+        'sampledata/CLOCK/Clock_1/Clock.sfa',
+        'src/main/assets/Clock')
+
+sceneform.asset('sampledata/DINNING/dinning_table_3/dinning_table_3.obj',
+        'default',
+        'sampledata/DINNING/dinning_table_3/dinning_table_3.sfa',
+        'src/main/assets/dinning_table_3')
+
+sceneform.asset('sampledata/LAMP/ceiling_lamp/ceiling_lamp.obj',
+        'default',
+        'sampledata/LAMP/ceiling_lamp/ceiling_lamp.sfa',
+        'src/main/assets/ceiling_lamp')
+
+sceneform.asset('sampledata/LAMP/ceiling_lamp_2/ceiling_lamp_2 (1).obj',
+        'default',
+        'sampledata/LAMP/ceiling_lamp_2/ceiling_lamp_2 (1).sfa',
+        'src/main/assets/ceiling_lamp_2 (1)')
+
+sceneform.asset('sampledata/DINNING/dinning_table_1/dinning_table_1.obj',
+        'default',
+        'sampledata/DINNING/dinning_table_1/dinning_table_1.sfa',
+        'src/main/assets/dinning_table_1')
+
+sceneform.asset('sampledata/LAMP/floor_lamp/floor_lamp.obj',
+        'default',
+        'sampledata/LAMP/floor_lamp/floor_lamp.sfa',
+        'src/main/assets/floor_lamp')
+
+
+
+sceneform.asset('sampledata/LAMP/table_lamp/table_lamp (3).obj',
+        'default',
+        'sampledata/LAMP/table_lamp/table_lamp (3).sfa',
+        'src/main/assets/table_lamp (3)')
+
+sceneform.asset('sampledata/LAMP/Wall_Lamp/wall_lamp (2).obj',
+        'default',
+        'sampledata/LAMP/Wall_Lamp/wall_lamp (2).sfa',
+        'src/main/assets/wall_lamp (2)')
+
+sceneform.asset('sampledata/LAMP/Wall_Light/wall_light.obj',
+        'default',
+        'sampledata/LAMP/Wall_Light/wall_light.sfa',
+        'src/main/assets/wall_light')
+
+sceneform.asset('sampledata/PAINTING/Painting-Woman/woman_painting (1).fbx',
+        'default',
+        'sampledata/PAINTING/Painting-Woman/woman_painting (1).sfa',
+        'src/main/assets/woman_painting (1)')
+
+sceneform.asset('sampledata/PAINTING/Panel/panel.obj',
+        'default',
+        'sampledata/PAINTING/Panel/panel.sfa',
+        'src/main/assets/panel')
+
+sceneform.asset('sampledata/PLANTS/plants_3/plants_3.obj',
+        'default',
+        'sampledata/PLANTS/plants_3/plants_3.sfa',
+        'src/main/assets/plants_3')
+
+sceneform.asset('sampledata/SOFA/sofa_1/sofa_1.obj',
+        'default',
+        'sampledata/SOFA/sofa_1/sofa_1.sfa',
+        'src/main/assets/sofa_1')
+
+
+sceneform.asset('sampledata/SOFA/sofa_3/Sofa_3.obj',
+        'default',
+        'sampledata/SOFA/sofa_3/Sofa_3.sfa',
+        'src/main/assets/Sofa_3')
+
+sceneform.asset('sampledata/SOFA/Sofa_5/sofa_5.obj',
+        'default',
+        'sampledata/SOFA/Sofa_5/sofa_5.sfa',
+        'src/main/assets/sofa_5')

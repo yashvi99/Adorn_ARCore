@@ -1,0 +1,52 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+# Multi/Sub vg_home_breola (5) to come 
+#
+newmtl vg_home_breola_mtl_1
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+map_d dcmap_vg_home_breola_2.jpg
+bump dcmap_vg_home_breola_1.jpg
+#
+newmtl vg_home_breola_mtl_2
+Ka  0.3 0.3 0.1
+Kd  0.3 0.3 0.1
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+bump dcmap_vg_home_breola_3.jpg
+#
+newmtl vg_home_breola_mtl_3
+Ka  0.4 0.4 0.2
+Kd  0.4 0.4 0.2
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+#
+newmtl vg_home_breola_mtl_4
+Ka  0.5 0.5 0.5
+Kd  0.5 0.5 0.5
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+map_Kd dcmap_vg_home_breola_4.jpg
+bump dcmap_vg_home_breola_4.jpg
+#
+newmtl vg_home_breola_mtl_5
+Ka  0.9 0.9 0.9
+Kd  0.9 0.9 0.9
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.0
+illum 2
+#
+# Multi/Sub vg_home_breola done 
+#
+# EOF

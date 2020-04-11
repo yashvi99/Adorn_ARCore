@@ -1,0 +1,75 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 17.05.2017 10:35:41
+
+newmtl Maison_Sarah_Lavoine_Vadim_Wall_Lamp_mat2_mtl_1
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.6510 0.4863 0.2980
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl Maison_Sarah_Lavoine_Vadim_Wall_Lamp_mat2_mtl_2
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.7529 0.7098 0.6353
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl Maison_Sarah_Lavoine_Vadim_Wall_Lamp_mat2_mtl_3
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.7529 0.7098 0.6353
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl Maison_Sarah_Lavoine_Vadim_Wall_Lamp_mat2_mtl_4
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.1059 0.1059 0.1059
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+
+newmtl Maison_Sarah_Lavoine_Vadim_Wall_Lamp_mat2_mtl_5
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.7961 0.7529 0.6784
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_d dcmap_Maison Sarah Lavoine_Vadim Wall Lamp_opac.jpg
+
+newmtl Maison_Sarah_Lavoine_Vadim_Wall_Lamp_mat2_mtl_6
+	Ns 10.0000
+	Ni 1.5000
+	d 0.0863
+	Tr 0.9137
+	Tf 0.0863 0.0863 0.0863 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.9137 0.9137 0.9137
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
