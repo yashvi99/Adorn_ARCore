@@ -37,6 +37,8 @@ public class itemsDisplayActivity extends AppCompatActivity {
             itemsModel = (ItemsModel) intent.getSerializableExtra("item");
             imageView.setImageResource(itemsModel.getImage());
             textView.setText(itemsModel.getDesc());
+            String info=getIntent().getStringExtra("Error");
+            textView.setText(info);
 
         }
 

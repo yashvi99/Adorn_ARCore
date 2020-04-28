@@ -5,4 +5,8 @@
     <color name="colorAccent">#D61717</color>
     <color name="white">#FFEBEBEB</color>
     <color name="black">#000000</color>
+    <color name="gray">#999999</color>
+    <color name="blue">#599eff</color>
+    <color name="line">#aaaaaa</color>
+
 </resources>

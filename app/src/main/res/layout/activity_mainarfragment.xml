@@ -27,6 +27,16 @@
                     android:layout_height="wrap_content"
                     android:text="Clear" />
 
+            <Button
+                android:id="@+id/measure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Measure" />
+            <Button
+                android:id="@+id/color_btton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color Picker" />
 
 
         </androidx.appcompat.widget.Toolbar>
