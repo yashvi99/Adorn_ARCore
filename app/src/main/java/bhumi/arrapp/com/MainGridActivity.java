@@ -9,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.GridView;
@@ -29,9 +28,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainGridActivity extends AppCompatActivity {
 
-    int images[] = {R.drawable.bedroom1,R.drawable.living_room1,R.drawable.kitchen1,R.drawable.bedroom2,R.drawable.living_room2,R.drawable.kitchen2,R.drawable.bedroom3,R.drawable.living_room3,R.drawable.kitchen3,R.drawable.bedroom4,R.drawable.living_room4,R.drawable.kitchen4,R.drawable.bedroom5,R.drawable.living_room5,R.drawable.kitchen5,R.drawable.bedroom6,R.drawable.living_room6,R.drawable.kitchen6,R.drawable.bedroom7,R.drawable.living_room7,R.drawable.bedroom8,R.drawable.living_room8};
+    int images[] = {R.drawable.bed,R.drawable.living_room1,R.drawable.kitchen1,R.drawable.bedroom2,R.drawable.living_room2,R.drawable.kitchen2,R.drawable.bedroom3,R.drawable.living_room3,R.drawable.kitchen3,R.drawable.bedroom4,R.drawable.living_room4,R.drawable.kitchen4,R.drawable.bedroom5,R.drawable.living_room5,R.drawable.kitchen5,R.drawable.bedroom6,R.drawable.living_room6,R.drawable.kitchen6,R.drawable.bedroom7,R.drawable.living_room7,R.drawable.bedroom8,R.drawable.living_room8};
     String names[] = {"Bedroom","Living Room","Kitchen","Bedroom","Living Room","Kitchen","Bedroom","Living Room","Kitchen","Bedroom","Living Room","Kitchen","Bedroom","Living Room","Kitchen","Bedroom","Living Room","Kitchen","Bedroom","Living Room","Bedroom","Living Room"};
-    String desc[] = {" a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "," a "};
+    String desc[] = {"This is bedroom","This is livingroom","this is kitchen ","This is bedroom","This is living room","This is kitchen","This is bedroom","This is living room","This is kitchen","This is bedroom","This is living room","This is kitchen","This is bedroom","This is living room","This is bedroom","This is kitchen","This is bedroom","This is living room","This is kitchen","A bedroom","A kitchen","This is bedroom"};
 
     List<ItemsModel> itemsList = new ArrayList<>();
 

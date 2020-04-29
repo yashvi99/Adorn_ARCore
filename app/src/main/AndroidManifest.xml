@@ -22,6 +22,7 @@
         <activity android:name=".itemsDisplayActivity"></activity>
         <activity android:name=".MainGridActivity" android:theme="@style/AppTheme"></activity>
         <activity android:name=".MainArFragmentActivity" android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".ArMeasureActivity"></activity>
         <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"
@@ -39,9 +40,15 @@
             android:authorities="bhumi.arrapp.com.ar.codelab.name.provider"
             android:exported="false"
             android:grantUriPermissions="true">
+            <meta-data android:name="com.google.ar.core" android:value="required" />
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/paths"/>
+                android:resource="@xml/paths"
+             />
+            <meta-data
+                android:name="io.fabric.ApiKey"
+                android:value="0b148442de0ebe36c4bf3cd5803e980c9e954a47"
+                />
         </provider>
 
     </application>

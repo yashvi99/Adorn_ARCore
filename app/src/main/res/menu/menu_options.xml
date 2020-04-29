@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/search_item"
+    <item android:id="@+id/Sofa1"
+        android:title="" />
+    <item android:id="@+id/Sofa"
         android:title="Sofa" />
-    <item android:id="@+id/upload_item"
-        android:title="Chairs" />
-    <item android:id="@+id/copy_item"
+    <item android:id="@+id/beds"
+        android:title="Beds" />
+    <item android:id="@+id/clock"
         android:title="Clock" />
-    <item android:id="@+id/print_item"
+    <item android:id="@+id/Lamp"
         android:title="Lamp" />
-    <item android:id="@+id/share_item"
-        android:title="House" />
-    <item android:id="@+id/bookmark_item"
-        android:title="BookMark" />
+    <item android:id="@+id/Table"
+        android:title="Table" />
+
 </menu>

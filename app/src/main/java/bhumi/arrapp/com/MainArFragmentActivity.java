@@ -16,42 +16,41 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import com.google.ar.core.Anchor;
-import java.lang.ref.WeakReference;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.ar.core.Anchor;
 import com.google.ar.core.Frame;
-import com.google.ar.core.Plane;
-
 import com.google.ar.core.HitResult;
+import com.google.ar.core.Plane;
 import com.google.ar.core.Trackable;
 import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.ArSceneView;
+import com.google.ar.sceneform.Camera;
+import com.google.ar.sceneform.Node;
+import com.google.ar.sceneform.Sun;
 import com.google.ar.sceneform.animation.ModelAnimator;
-
 import com.google.ar.sceneform.rendering.AnimationData;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
-
-
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
+import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.FileProvider;
+import yuku.ambilwarna.AmbilWarnaDialog;
 
 public class MainArFragmentActivity extends AppCompatActivity {
     private ArFragment fragment;
@@ -60,6 +59,11 @@ public class MainArFragmentActivity extends AppCompatActivity {
     private boolean isHitting; // Indicating the user is looking at a plane. The method for figuring this out is called hitTest which is why it is called isHitting.
     private ModelLoader modelLoader; // This class Async loaded into AR Fragment
     private Anchor cloudAnchor;
+
+
+    Button colorbutton;
+    Button measButton;
+    private int currentColor;
     private enum AppAnchorState {
         NONE,
         HOSTING,
@@ -68,6 +72,11 @@ public class MainArFragmentActivity extends AppCompatActivity {
         RESOLVED
     }
     private AppAnchorState appAnchorState = AppAnchorState.NONE;
+
+
+    // defining the variables for integration.
+
+//    Main Class Starts here
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,27 +98,62 @@ public class MainArFragmentActivity extends AppCompatActivity {
         });
 
         // Create instance of ModelLoader with weakRefrence
+
         modelLoader = new ModelLoader(new WeakReference<>(this));
         // Initialise gallery views
 //        initializeGallery();
 //        sofaGallery();
+
+//       Clear Button Added
         Button clearButton = findViewById(R.id.clear_button);
-        clearButton.setOnClickListener(new View.OnClickListener() {
+        clearButton.setOnClickListener(v -> setCloudAnchor(null));
+
+        Button colorButton=findViewById(R.id.color_btton);
+        colorButton.setOnClickListener(v -> opendialog(false));
+
+        Button measButton=findViewById(R.id.measure);
+        measButton.setOnClickListener(view -> {
+            Intent intent=new Intent(MainArFragmentActivity.this,ArMeasureActivity.class);
+            startActivity(intent);
+
+        });
+    }
+    private void opendialog(boolean supportAlpha){
+
+        AmbilWarnaDialog dialog=new AmbilWarnaDialog(this, currentColor, supportAlpha, new AmbilWarnaDialog.OnAmbilWarnaListener() {
             @Override
-            public void onClick(View v) {
-                setCloudAnchor(null);
+            public void onCancel(AmbilWarnaDialog dialog) {
+
+            }
+
+            @Override
+            public void onOk(AmbilWarnaDialog dialog, int color) {
+
+                currentColor = color;
+
             }
         });
 
+        dialog.show();
     }
 
-    private void setCloudAnchor (Anchor newAnchor) {
-        if (cloudAnchor != null) {
-            cloudAnchor.detach();
-        }
 
-        cloudAnchor = newAnchor;
-        appAnchorState = AppAnchorState.NONE;
+
+
+
+
+    private void setCloudAnchor (Anchor newAnchor) {
+        List<Node> children = new ArrayList<>(fragment.getArSceneView().getScene().getChildren());
+        for (Node node : children) {
+            if (node instanceof AnchorNode) {
+                if (((AnchorNode) node).getAnchor() != null) {
+                    ((AnchorNode) node).getAnchor().detach();
+                }
+            }
+            if (!(node instanceof Camera) && !(node instanceof Sun)) {
+                node.setParent(null);
+            }
+        }
     }
 
     @Override
@@ -117,31 +161,37 @@ public class MainArFragmentActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_options, menu);
         return true;
     }
+
+//    Options Menu to place objects
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         Toast.makeText(this, "Selected Item: " +item.getTitle(), Toast.LENGTH_SHORT).show();
 
         switch (item.getItemId()) {
-            case R.id.search_item:
-                // do your code
-                initializeGallery();
+            case R.id.Sofa:
+
+                SofaGallery();
                 return true;
-            case R.id.upload_item:
-                // do your code
-                sofaGallery();
+            case R.id.beds:
+
+                bedsGallery();
                 return true;
-            case R.id.copy_item:
-                // do your code
+
+            case R.id.Lamp:
+
+                lampGallery();
                 return true;
-            case R.id.print_item:
-                // do your code
+
+            case R.id.clock:
+
+                clockGallery();
                 return true;
-            case R.id.share_item:
-                // do your code
+
+            case R.id.Table:
+
+                tableGallery();
                 return true;
-            case R.id.bookmark_item:
-                // do your code
-                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -205,67 +255,132 @@ public class MainArFragmentActivity extends AppCompatActivity {
     }
 
     // Create gallery for selecting augument objects
-    private void initializeGallery() {
+    private void SofaGallery() {
+
+       LinearLayout gallery = findViewById(R.id.gallery_layout);
+
+        // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
+        ImageView sofa1 = new ImageView(this);
+        sofa1.setImageResource(R.drawable.sofa1);
+        sofa1.setContentDescription("Sofa Image 1");
+        sofa1.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("sofa_1.sfb")));
+        gallery.addView(sofa1);
+
+//        Second Image Added
+
+        ImageView sofa2 = new ImageView(this);
+        sofa2.setImageResource(R.drawable.sofa_thumb);
+        sofa2.setContentDescription("Sofa Image 2");
+        sofa2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("sofa_5.sfb")));
+        gallery.addView(sofa2);
+
+//        Third Image Added
+
+        ImageView sofa3 = new ImageView(this);
+        sofa3.setImageResource(R.drawable.sofa_1);
+        sofa3.setContentDescription("house");
+        sofa3.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Sofa_3.sfb")));
+        gallery.addView(sofa3);
+
+    }
+
+    private void bedsGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
         // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
-        ImageView andy = new ImageView(this);
-        andy.setImageResource(R.drawable.droid_thumb);
-        andy.setContentDescription("andy");
-        andy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MainArFragmentActivity.this.addObject(Uri.parse("andy_dance.sfb"));
-            }
-        });
-        gallery.addView(andy);
+        ImageView beds1 = new ImageView(this);
+        beds1.setImageResource(R.drawable.bedroom1);
+        beds1.setContentDescription("Bed Image 1");
+        beds1.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("bed_1.sfb")));
+        gallery.addView(beds1);
 
-        ImageView cabin = new ImageView(this);
-        cabin.setImageResource(R.drawable.cabin_thumb);
-        cabin.setContentDescription("cabin");
-        cabin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MainArFragmentActivity.this.addObject(Uri.parse("Cabin.sfb"));
-            }
-        });
-        gallery.addView(cabin);
 
-        ImageView house = new ImageView(this);
-        house.setImageResource(R.drawable.clock);
-        house.setContentDescription("house");
-        house.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("House.sfb")));
-        gallery.addView(house);
+        ImageView bed2 = new ImageView(this);
+        bed2.setImageResource(R.drawable.bedroom2);
+        bed2.setContentDescription("Bed Image 2");
+        bed2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("bed_2.sfb")));
+        gallery.addView(bed2);
 
-        ImageView igloo = new ImageView(this);
-        igloo.setImageResource(R.drawable.stool);
-        igloo.setContentDescription("igloo");
-        igloo.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("igloo.sfb")));
-        gallery.addView(igloo);
+
+        ImageView bed3 = new ImageView(this);
+        bed3.setImageResource(R.drawable.bedroom3);
+        bed3.setContentDescription("Bed Image 3");
+        bed3.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("bed_4.sfb")));
+        gallery.addView(bed3);
     }
 
-    private void sofaGallery() {
+    private void clockGallery(){
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
         // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
-        ImageView andy = new ImageView(this);
-        andy.setImageResource(R.drawable.sofa_thumb);
-        andy.setContentDescription("andy");
-        andy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                MainArFragmentActivity.this.addObject(Uri.parse("andy_dance.sfb"));
-            }
-        });
-        gallery.addView(andy);
+        ImageView clock = new ImageView(this);
+        clock.setImageResource(R.drawable.clock);
+        clock.setContentDescription("Clock Image 1");
+        clock.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        gallery.addView(clock);
 
 
-        ImageView igloo = new ImageView(this);
-        igloo.setImageResource(R.drawable.igloo_thumb);
-        igloo.setContentDescription("igloo");
-        igloo.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("igloo.sfb")));
-        gallery.addView(igloo);
     }
+
+    private void lampGallery(){
+        LinearLayout gallery = findViewById(R.id.gallery_layout);
+
+        // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
+        ImageView lamp1 = new ImageView(this);
+        lamp1.setImageResource(R.drawable.lamp_thumb);
+        lamp1.setContentDescription("Lamp Image 1");
+        lamp1.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("ceiling_lamp.sfb")));
+        gallery.addView(lamp1);
+
+        ImageView lamp2 = new ImageView(this);
+        lamp2.setImageResource(R.drawable.ceiling_lamp);
+        lamp2.setContentDescription("Lamp Image 2");
+        lamp2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("ceiling_lamp_2 (1).sfb")));
+        gallery.addView(lamp2);
+
+        ImageView lamp3 = new ImageView(this);
+        lamp3.setImageResource(R.drawable.floor_lamp);
+        lamp3.setContentDescription("Floor Image 3");
+        lamp3.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("floor_lamp.sfb")));
+        gallery.addView(lamp3 );
+
+        ImageView lamp4 = new ImageView(this);
+        lamp4.setImageResource(R.drawable.table_lamp);
+        lamp4.setContentDescription("Table Lamp 4");
+        lamp4.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("table_lamp (3).sfb")));
+        gallery.addView(lamp4);
+
+        ImageView walllamp = new ImageView(this);
+        walllamp.setImageResource(R.drawable.wall_lamp);
+        walllamp.setContentDescription("Wall Lamp Image 5");
+        walllamp.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("wall_lamp (2).sfb")));
+        gallery.addView(walllamp);
+
+        ImageView walllight = new ImageView(this);
+        walllight.setImageResource(R.drawable.wall_light);
+        walllight.setContentDescription("Wall Light 6");
+        walllight.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("wall_light.sfb")));
+        gallery.addView(walllight);
+    }
+
+    private void tableGallery() {
+        LinearLayout gallery = findViewById(R.id.gallery_layout);
+
+        // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
+        ImageView table = new ImageView(this);
+        table.setImageResource(R.drawable.table1);
+        table.setContentDescription("Table Image 1");
+        table.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("dinning_table_1.sfb")));
+        gallery.addView(table);
+
+        ImageView table2 = new ImageView(this);
+        table2.setImageResource(R.drawable.table_thumb);
+        table2.setContentDescription("Lamp Image 1");
+        table2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("dinning_table_2.sfb")));
+        gallery.addView(table2);
+
+    }
+
 
     // Add augumented object to AR Fragment
     private void addObject(Uri model) {
