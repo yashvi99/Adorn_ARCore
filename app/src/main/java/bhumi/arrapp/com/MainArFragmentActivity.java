@@ -187,9 +187,25 @@ public class MainArFragmentActivity extends AppCompatActivity {
                 clockGallery();
                 return true;
 
+            case R.id.D_Table:
+
+                dinning_tableGallery();
+                return true;
+
             case R.id.Table:
 
                 tableGallery();
+                return true;
+
+            case R.id.Plant:
+
+                plantGallery();
+                return true;
+
+
+            case R.id.Painting:
+
+                paintingGallery();
                 return true;
 
             default:
@@ -259,26 +275,23 @@ public class MainArFragmentActivity extends AppCompatActivity {
 
        LinearLayout gallery = findViewById(R.id.gallery_layout);
 
-        // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
         ImageView sofa1 = new ImageView(this);
-        sofa1.setImageResource(R.drawable.sofa1);
-        sofa1.setContentDescription("Sofa Image 1");
+        sofa1.setImageResource(R.drawable.sofa_1);
+        sofa1.setContentDescription("Sofa1");
         sofa1.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("sofa_1.sfb")));
         gallery.addView(sofa1);
 
-//        Second Image Added
 
         ImageView sofa2 = new ImageView(this);
-        sofa2.setImageResource(R.drawable.sofa_thumb);
-        sofa2.setContentDescription("Sofa Image 2");
+        sofa2.setImageResource(R.drawable.sofa_5);
+        sofa2.setContentDescription("Sofa2");
         sofa2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("sofa_5.sfb")));
         gallery.addView(sofa2);
 
-//        Third Image Added
 
         ImageView sofa3 = new ImageView(this);
-        sofa3.setImageResource(R.drawable.sofa_1);
-        sofa3.setContentDescription("house");
+        sofa3.setImageResource(R.drawable.sofa_3);
+        sofa3.setContentDescription("Sofa3");
         sofa3.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Sofa_3.sfb")));
         gallery.addView(sofa3);
 
@@ -289,21 +302,21 @@ public class MainArFragmentActivity extends AppCompatActivity {
 
         // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
         ImageView beds1 = new ImageView(this);
-        beds1.setImageResource(R.drawable.bedroom1);
+        beds1.setImageResource(R.drawable.bed_1);
         beds1.setContentDescription("Bed Image 1");
         beds1.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("bed_1.sfb")));
         gallery.addView(beds1);
 
 
         ImageView bed2 = new ImageView(this);
-        bed2.setImageResource(R.drawable.bedroom2);
+        bed2.setImageResource(R.drawable.bed_2);
         bed2.setContentDescription("Bed Image 2");
         bed2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("bed_2.sfb")));
         gallery.addView(bed2);
 
 
         ImageView bed3 = new ImageView(this);
-        bed3.setImageResource(R.drawable.bedroom3);
+        bed3.setImageResource(R.drawable.bed_4);
         bed3.setContentDescription("Bed Image 3");
         bed3.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("bed_4.sfb")));
         gallery.addView(bed3);
@@ -327,57 +340,130 @@ public class MainArFragmentActivity extends AppCompatActivity {
 
         // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
         ImageView lamp1 = new ImageView(this);
-        lamp1.setImageResource(R.drawable.lamp_thumb);
-        lamp1.setContentDescription("Lamp Image 1");
+        lamp1.setImageResource(R.drawable.ceiling_lamp);
+        lamp1.setContentDescription("Lamp1");
         lamp1.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("ceiling_lamp.sfb")));
         gallery.addView(lamp1);
 
         ImageView lamp2 = new ImageView(this);
-        lamp2.setImageResource(R.drawable.ceiling_lamp);
-        lamp2.setContentDescription("Lamp Image 2");
+        lamp2.setImageResource(R.drawable.ceilinglamp2);
+        lamp2.setContentDescription("Lamp2");
         lamp2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("ceiling_lamp_2 (1).sfb")));
         gallery.addView(lamp2);
 
         ImageView lamp3 = new ImageView(this);
         lamp3.setImageResource(R.drawable.floor_lamp);
-        lamp3.setContentDescription("Floor Image 3");
+        lamp3.setContentDescription("Floor_lamp3");
         lamp3.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("floor_lamp.sfb")));
         gallery.addView(lamp3 );
 
         ImageView lamp4 = new ImageView(this);
         lamp4.setImageResource(R.drawable.table_lamp);
-        lamp4.setContentDescription("Table Lamp 4");
+        lamp4.setContentDescription("Table_lamp4");
         lamp4.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("table_lamp (3).sfb")));
         gallery.addView(lamp4);
 
         ImageView walllamp = new ImageView(this);
         walllamp.setImageResource(R.drawable.wall_lamp);
-        walllamp.setContentDescription("Wall Lamp Image 5");
+        walllamp.setContentDescription("Wall_lamp5");
         walllamp.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("wall_lamp (2).sfb")));
         gallery.addView(walllamp);
 
         ImageView walllight = new ImageView(this);
         walllight.setImageResource(R.drawable.wall_light);
-        walllight.setContentDescription("Wall Light 6");
+        walllight.setContentDescription("WallLight6");
         walllight.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("wall_light.sfb")));
         gallery.addView(walllight);
     }
 
-    private void tableGallery() {
+    private void dinning_tableGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
         // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
         ImageView table = new ImageView(this);
-        table.setImageResource(R.drawable.table1);
+        table.setImageResource(R.drawable.dinning_table_1);
         table.setContentDescription("Table Image 1");
         table.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("dinning_table_1.sfb")));
         gallery.addView(table);
 
         ImageView table2 = new ImageView(this);
-        table2.setImageResource(R.drawable.table_thumb);
+        table2.setImageResource(R.drawable.dinning_table_3);
         table2.setContentDescription("Lamp Image 1");
-        table2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("dinning_table_2.sfb")));
+        table2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("dinning_table_3.sfb")));
         gallery.addView(table2);
+
+    }
+
+    private void tableGallery(){
+        LinearLayout gallery = findViewById(R.id.gallery_layout);
+
+        // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
+        ImageView table1 = new ImageView(this);
+        table1.setImageResource(R.drawable.coffee_table);
+        table1.setContentDescription("Table1");
+        table1.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        gallery.addView( table1);
+
+        ImageView  table2 = new ImageView(this);
+        table2.setImageResource(R.drawable.coffee_table_2);
+        table2.setContentDescription("Table2");
+        table2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        gallery.addView(table2);
+
+
+        ImageView table3 = new ImageView(this);
+        table3.setImageResource(R.drawable.softwall);
+        table3.setContentDescription("Table3");
+        table3.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        gallery.addView(table3);
+
+
+        ImageView table4 = new ImageView(this);
+        table4.setImageResource(R.drawable.table_1);
+        table4.setContentDescription("Table4");
+        table4.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        gallery.addView(table4);
+
+
+        ImageView table5 = new ImageView(this);
+        table5.setImageResource(R.drawable.table_2);
+        table5.setContentDescription("Table5");
+        table5.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        gallery.addView(table5);
+
+
+
+    }
+
+    private void plantGallery(){
+        LinearLayout gallery = findViewById(R.id.gallery_layout);
+
+        // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
+        ImageView clock = new ImageView(this);
+        clock.setImageResource(R.drawable.plants_3);
+        clock.setContentDescription("Plant1");
+        clock.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("plants_3.sfb")));
+        gallery.addView(clock);
+
+
+    }
+
+    private void paintingGallery(){
+        LinearLayout gallery = findViewById(R.id.gallery_layout);
+
+        // Add image to Linear Layout, for each augumented object eg. Andy, car, ignoo etc
+        ImageView woman = new ImageView(this);
+        woman.setImageResource(R.drawable.cleo);
+        woman.setContentDescription("painting1");
+        woman.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("woman_painting(1).sfb")));
+        gallery.addView(woman);
+
+        ImageView panel = new ImageView(this);
+        panel.setImageResource(R.drawable.panel);
+        panel.setContentDescription("panel1");
+        panel.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("panel.sfb")));
+        gallery.addView(panel);
+
 
     }
 

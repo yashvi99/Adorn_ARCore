@@ -9,7 +9,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class itemsDisplayActivity extends AppCompatActivity {
+public class
+itemsDisplayActivity extends AppCompatActivity {
 
     FloatingActionButton flb;
     ImageView imageView;

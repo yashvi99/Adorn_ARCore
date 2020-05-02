@@ -62,6 +62,7 @@ dependencies {
     implementation('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
         transitive = true;
     }
+    implementation project(path: ':openCV module')
 
 }
 

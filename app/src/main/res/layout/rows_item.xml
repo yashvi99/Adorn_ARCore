@@ -15,8 +15,7 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:src="@drawable/armchair" />
+            android:layout_gravity="center" />
 
         <TextView
             android:id="@+id/tvName"
@@ -24,7 +23,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="2dp"
-            android:text="Arm Chair"
             android:visibility="invisible" />
 
         <TextView
@@ -33,7 +31,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:text="Desc"
             android:visibility="invisible" />
 
 

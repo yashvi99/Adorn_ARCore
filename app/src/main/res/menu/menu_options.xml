@@ -11,7 +11,14 @@
         android:title="Clock" />
     <item android:id="@+id/Lamp"
         android:title="Lamp" />
+    <item android:id="@+id/D_Table"
+        android:title="Dinning Table" />
+
     <item android:id="@+id/Table"
         android:title="Table" />
+    <item android:id="@+id/Plant"
+        android:title="Plants" />
+    <item android:id="@+id/Painting"
+        android:title="Painting" />
 
 </menu>
