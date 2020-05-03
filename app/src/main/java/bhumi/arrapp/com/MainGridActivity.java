@@ -28,9 +28,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainGridActivity extends AppCompatActivity {
 
-    int images[] = {R.drawable.bedroom1,R.drawable.living_room1,R.drawable.kitchen1,R.drawable.bedroom2,R.drawable.living_room2,R.drawable.kitchen2,R.drawable.bedroom3,R.drawable.living_room3,R.drawable.kitchen3,R.drawable.bedroom4,R.drawable.living_room4,R.drawable.kitchen4,R.drawable.bedroom5,R.drawable.living_room5,R.drawable.kitchen5,R.drawable.bedroom6,R.drawable.living_room6,R.drawable.kitchen6,R.drawable.bedroom7,R.drawable.living_room7,R.drawable.bedroom8,R.drawable.living_room8};
-    String names[] = {"Bedroom","Living Room","Kitchen","Bedroom","Living Room","Kitchen","Bedroom","Living Room","Kitchen","Bedroom","Living Room","Kitchen","Bedroom","Living Room","Kitchen","Bedroom","Living Room","Kitchen","Bedroom","Living Room","Bedroom","Living Room"};
-    String desc[] = {"This is bedroom","This is living room","this is kitchen ","This is bedroom","This is living room","This is kitchen","This is bedroom","This is living room","This is kitchen","This is bedroom","This is living room","This is kitchen","This is bedroom","This is living room","This is kitchen","This is bedroom","This is living room","Kitchen design","A bedroom","A living room","This is bedroom","living room design"};
+    int images[] = {R.drawable.bedroom1,R.drawable.living_room1,R.drawable.kitchen1,R.drawable.bedroom2,R.drawable.living_room2,R.drawable.kitchen2,R.drawable.bedroom3,R.drawable.living_room3,R.drawable.kitchen3,R.drawable.bedroom4,R.drawable.living_room4,R.drawable.kitchen4,R.drawable.bedroom5,R.drawable.living_room5,R.drawable.kitchen5,R.drawable.bedroom6,R.drawable.living_room6,R.drawable.kitchen6,R.drawable.bedroom7,R.drawable.living_room7,R.drawable.bedroom8,R.drawable.living_room8,R.drawable.kitchen7,R.drawable.kitchen8,R.drawable.bedroom9,R.drawable.living_room9,R.drawable.kitchen9,R.drawable.bedroom10,R.drawable.living_room10,R.drawable.kitchen10,R.drawable.bedroom11,R.drawable.living_room11,R.drawable.bedroom12,R.drawable.living_room12,R.drawable.bedroom13,R.drawable.living_room13,R.drawable.bedroom14,R.drawable.living_room14};
+    String names[] = {"bedroom , blue , white , grey , wood "," living room , wood , white "," kitchen , blue , white "," bedroom , grey , white , wood "," living room , white "," kitchen , wood "," bedroom , green "," living room , white , blue "," kitchen , blue , white "," bedroom , white , purple "," living room , beige "," kitchen , white "," bedroom , white "," living room , white "," kitchen , blue "," bedroom , white "," living room , beige "," Kitchen , white , grey "," bedroom , white , blue "," living room , white , grey , black "," bedroom , brown , white "," living room design , white , beige "," Kitchen , green , white "," Kitchen , white , brown , wood "," bedroom , white , red "," living room , pink , white , wood "," kitchen , black , white , wood "," bedroom , white , red "," living room , green , white "," kitchen , blue , purple "," bedroom , green "," living room , brown , beige "," bedroom , white , green "," living room , brown , white , beige "," bedroom , white , yellow "," living room , brown , white , grey "," bedroom , yellow , blue "," living room , purple , white "};
+    String desc[] = {"This is bedroom , blue , white , grey , wood :","This is living room , wood , white :","this is kitchen , blue , white :","This is bedroom , grey , white , wood :","This is living room , white :","This is kitchen , wood :","This is bedroom , green :","This is living room , white , blue :","This is kitchen , blue , white :","This is bedroom , white , purple :","This is living room , beige :","This is kitchen , white :","This is bedroom , white :","This is living room , white :","This is kitchen , blue :","This is bedroom , white :","This is living room , beige :"," Kitchen design , white , grey :","A bedroom , white , blue :","A living room , white , grey , black :","This is bedroom , brown , white :"," living room design , white , beige :" , " Kitchen , green , white :", " Kitchen , white , brown , wood :", " bedroom , white , red :"," living room , pink , white , wood :"," kitchen , black , white , wood :", " bedroom , white , red :"," living room , green , white :"," kitchen , blue , purple :"," bedroom , green :"," living room , brown , beige :"," bedroom , white , green :"," living room , brown , white , beige :"," bedroom , white , yellow :"," living room , brown , white , grey :"," bedroom , yellow , blue :"," living room , purple , white :"};
 
     List<ItemsModel> itemsList = new ArrayList<>();
 
@@ -191,23 +191,30 @@ public class MainGridActivity extends AppCompatActivity {
 
                     }else{
 
-                        String searchStr = constraint.toString().toLowerCase();
+                        String[] searchStr = constraint.toString().toLowerCase().split(" ");
                         List<ItemsModel> resultData = new ArrayList<>();
 
-                        for(ItemsModel itemsModel:itemsModelList){
+                        for (ItemsModel itemsModel : itemsModelList) {
 
-                            if(itemsModel.getName().contains(searchStr) || itemsModel.getDesc().contains(searchStr)){
-                                resultData.add(itemsModel);
-                            }
+                          if(searchStr.length == 1)
+                          {
+                              if (itemsModel.getName().contains(searchStr[0])|| itemsModel.getDesc().contains(searchStr[0]))
+                              {
+                                  filterResults.count = resultData.size();
+                                  filterResults.values = resultData;
+                              }
+                          }
+                          else {
+                              if (itemsModel.getName().contains(searchStr[0]) & itemsModel.getName().contains(searchStr[1]) || itemsModel.getDesc().contains(searchStr[0]) & itemsModel.getDesc().contains(searchStr[1])) {
+                                  resultData.add(itemsModel);
+                              }
 
-                            filterResults.count = resultData.size();
-                            filterResults.values = resultData;
-
+                              filterResults.count = resultData.size();
+                              filterResults.values = resultData;
+                          }
                         }
 
-
                     }
-
                     return filterResults;
                 }
 

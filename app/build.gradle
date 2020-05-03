@@ -177,3 +177,33 @@ sceneform.asset('sampledata/SOFA/Sofa_5/sofa_5.obj',
         'default',
         'sampledata/SOFA/Sofa_5/sofa_5.sfa',
         'src/main/assets/sofa_5')
+
+sceneform.asset('sampledata/TABLE/coffee_table_2/coffee_table_2 (2).obj',
+        'default',
+        'sampledata/TABLE/coffee_table_2/coffee_table_2 (2).sfa',
+        'src/main/assets/coffee_table_2 (2)')
+
+sceneform.asset('sampledata/TABLE/coffee_table/coffee_table (2).obj',
+        'default',
+        'sampledata/TABLE/coffee_table/coffee_table (2).sfa',
+        'src/main/assets/coffee_table (2)')
+
+sceneform.asset('sampledata/TABLE/softwall/softwall.obj',
+        'default',
+        'sampledata/TABLE/softwall/softwall.sfa',
+        'src/main/assets/softwall')
+
+sceneform.asset('sampledata/TABLE/table_1/table_1 (2).obj',
+        'default',
+        'sampledata/TABLE/table_1/table_1 (2).sfa',
+        'src/main/assets/table_1 (2)')
+
+sceneform.asset('sampledata/TABLE/table_1/table_1 (4).obj',
+        'default',
+        'sampledata/TABLE/table_1/table_1 (4).sfa',
+        'src/main/assets/table_1 (4)')
+
+sceneform.asset('sampledata/TABLE/table_2/table_2 (2).obj',
+        'default',
+        'sampledata/TABLE/table_2/table_2 (2).sfa',
+        'src/main/assets/table_2 (2)')

@@ -401,34 +401,34 @@ public class MainArFragmentActivity extends AppCompatActivity {
         ImageView table1 = new ImageView(this);
         table1.setImageResource(R.drawable.coffee_table);
         table1.setContentDescription("Table1");
-        table1.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        table1.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("coffee_table(2).sfb")));
         gallery.addView( table1);
 
         ImageView  table2 = new ImageView(this);
         table2.setImageResource(R.drawable.coffee_table_2);
         table2.setContentDescription("Table2");
-        table2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        table2.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("coffee_table_2(2).sfb")));
         gallery.addView(table2);
 
 
         ImageView table3 = new ImageView(this);
         table3.setImageResource(R.drawable.softwall);
         table3.setContentDescription("Table3");
-        table3.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        table3.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("softwall.sfb")));
         gallery.addView(table3);
 
 
         ImageView table4 = new ImageView(this);
         table4.setImageResource(R.drawable.table_1);
         table4.setContentDescription("Table4");
-        table4.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        table4.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("table_1(2).sfb")));
         gallery.addView(table4);
 
 
         ImageView table5 = new ImageView(this);
         table5.setImageResource(R.drawable.table_2);
         table5.setContentDescription("Table5");
-        table5.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("Clock.sfb")));
+        table5.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("table_2(2).sfb")));
         gallery.addView(table5);
 
 
