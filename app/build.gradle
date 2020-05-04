@@ -67,11 +67,6 @@ dependencies {
 }
 
 
-
-
-
-
-
 sceneform.asset('sampledata/BED/bed_1/bed_1.obj',
         'default',
         'sampledata/BED/bed_1/bed_1.sfa',
@@ -81,13 +76,6 @@ sceneform.asset('sampledata/BED/bed_2/bed_2.obj',
         'default',
         'sampledata/BED/bed_2/bed_2.sfa',
         'src/main/assets/bed_2')
-
-
-
-
-
-
-
 
 
 sceneform.asset('sampledata/BED/bed_4/bed_4.obj',
@@ -129,7 +117,6 @@ sceneform.asset('sampledata/LAMP/floor_lamp/floor_lamp.obj',
         'default',
         'sampledata/LAMP/floor_lamp/floor_lamp.sfa',
         'src/main/assets/floor_lamp')
-
 
 
 sceneform.asset('sampledata/LAMP/table_lamp/table_lamp (3).obj',

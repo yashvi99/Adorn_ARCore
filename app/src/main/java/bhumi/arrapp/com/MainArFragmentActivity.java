@@ -61,8 +61,6 @@ public class MainArFragmentActivity extends AppCompatActivity {
     private Anchor cloudAnchor;
 
 
-    Button colorbutton;
-    Button measButton;
     private int currentColor;
     private enum AppAnchorState {
         NONE,
