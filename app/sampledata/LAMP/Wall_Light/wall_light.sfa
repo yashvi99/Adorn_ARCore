@@ -115,7 +115,7 @@
     file: 'sampledata/LAMP/Wall_Light/wall_light.obj',
     name: 'wall_light',
     recenter: 'root',
-    scale: 0.100198,
+    scale: 0.00900198,
   },
   version: '0.54:2',
 }

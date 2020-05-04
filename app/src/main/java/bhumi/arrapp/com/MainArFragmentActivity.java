@@ -29,6 +29,7 @@ import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.ArSceneView;
 import com.google.ar.sceneform.Camera;
 import com.google.ar.sceneform.Node;
+import com.google.ar.sceneform.math.Vector3;
 import com.google.ar.sceneform.Sun;
 import com.google.ar.sceneform.animation.ModelAnimator;
 import com.google.ar.sceneform.rendering.AnimationData;
@@ -167,42 +168,51 @@ public class MainArFragmentActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.Sofa:
-
+                LinearLayout gallerys = findViewById(R.id.gallery_layout);
+                gallerys.removeAllViewsInLayout();
                 SofaGallery();
                 return true;
-            case R.id.beds:
 
+            case R.id.beds:
+                LinearLayout galleryb = findViewById(R.id.gallery_layout);
+                galleryb.removeAllViewsInLayout();
                 bedsGallery();
                 return true;
 
             case R.id.Lamp:
-
+                LinearLayout galleryl = findViewById(R.id.gallery_layout);
+                galleryl.removeAllViewsInLayout();
                 lampGallery();
                 return true;
 
             case R.id.clock:
-
+                LinearLayout galleryc = findViewById(R.id.gallery_layout);
+                galleryc.removeAllViewsInLayout();
                 clockGallery();
                 return true;
 
             case R.id.D_Table:
-
+                LinearLayout galleryd = findViewById(R.id.gallery_layout);
+                galleryd.removeAllViewsInLayout();
                 dinning_tableGallery();
                 return true;
 
             case R.id.Table:
-
+                LinearLayout galleryt = findViewById(R.id.gallery_layout);
+                galleryt.removeAllViewsInLayout();
                 tableGallery();
                 return true;
 
             case R.id.Plant:
-
+                LinearLayout gallery = findViewById(R.id.gallery_layout);
+                gallery.removeAllViewsInLayout();
                 plantGallery();
                 return true;
 
 
             case R.id.Painting:
-
+                LinearLayout galleryp = findViewById(R.id.gallery_layout);
+                galleryp.removeAllViewsInLayout();
                 paintingGallery();
                 return true;
 
@@ -362,13 +372,13 @@ public class MainArFragmentActivity extends AppCompatActivity {
         gallery.addView(lamp4);
 
         ImageView walllamp = new ImageView(this);
-        walllamp.setImageResource(R.drawable.wall_lamp);
+        walllamp.setImageResource(R.drawable.wall_light);
         walllamp.setContentDescription("Wall_lamp5");
         walllamp.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("wall_lamp (2).sfb")));
         gallery.addView(walllamp);
 
         ImageView walllight = new ImageView(this);
-        walllight.setImageResource(R.drawable.wall_light);
+        walllight.setImageResource(R.drawable.wall_lamp);
         walllight.setContentDescription("WallLight6");
         walllight.setOnClickListener(view -> MainArFragmentActivity.this.addObject(Uri.parse("wall_light.sfb")));
         gallery.addView(walllight);
@@ -495,7 +505,7 @@ public class MainArFragmentActivity extends AppCompatActivity {
         // We could use the base class type, Node for the placing the objects,
         // but Node does not have the interaction functionality to handle moving, scaling and rotating based on user gestures.
         TransformableNode node = new TransformableNode(fragment.getTransformationSystem());
-
+        node.setLocalScale(new Vector3(0.75f, 0.75f, 0.75f));
         node.setRenderable(renderable);
         node.setParent(anchorNode);
         fragment.getArSceneView().getScene().addChild(anchorNode);

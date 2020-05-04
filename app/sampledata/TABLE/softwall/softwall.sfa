@@ -89,7 +89,7 @@
     file: 'sampledata/TABLE/softwall/softwall.obj',
     name: 'softwall',
     recenter: 'root',
-    scale: 0.028239,
+    scale: 0.0018239,
   },
   version: '0.54:2',
 }
