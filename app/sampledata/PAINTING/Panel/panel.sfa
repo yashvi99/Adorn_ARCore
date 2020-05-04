@@ -63,7 +63,7 @@
     file: 'sampledata/PAINTING/Panel/panel.obj',
     name: 'panel',
     recenter: 'root',
-    scale: 0.04271699999999999,
+    scale: 0.004271699999999999,
   },
   version: '0.54:2',
 }
