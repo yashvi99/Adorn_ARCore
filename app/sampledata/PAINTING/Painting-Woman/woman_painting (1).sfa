@@ -138,7 +138,6 @@
     file: 'sampledata/PAINTING/Painting-Woman/woman_painting (1).fbx',
     name: 'woman_painting (1)',
     recenter: 'root',
-
   },
   samplers: [
     {

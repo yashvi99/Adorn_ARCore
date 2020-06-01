@@ -167,7 +167,7 @@
     file: 'sampledata/LAMP/table_lamp/table_lamp (3).obj',
     name: 'table_lamp (3)',
     recenter: 'root',
-    scale: 0.005203999999999999,
+    scale: 0.023203999999999999,
   },
   version: '0.54:2',
 }

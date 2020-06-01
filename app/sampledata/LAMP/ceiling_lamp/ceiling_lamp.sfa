@@ -193,7 +193,7 @@
     file: 'sampledata/LAMP/ceiling_lamp/ceiling_lamp.obj',
     name: 'ceiling_lamp',
     recenter: 'root',
-    scale: 0.00525,
+    scale: 0.0625,
   },
   version: '0.54:2',
 }

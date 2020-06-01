@@ -141,7 +141,7 @@
     file: 'sampledata/LAMP/floor_lamp/floor_lamp.obj',
     name: 'floor_lamp',
     recenter: 'root',
-    scale: 0.007281999999999999,
+    scale: 0.017281999999999999,
   },
   version: '0.54:2',
 }
