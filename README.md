@@ -1,6 +1,7 @@
 # ArCoreAdorn 
 
 
-_Contributor List_
+_Contributor List_ : 
+
 Karshil Sheth 
 
